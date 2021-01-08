@@ -1,20 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour{
 
-    Rigidbody2D rigidbody;
-    public Rigidbody2D hook;
+    public Rigidbody2D rigidBody2D;
+    Rigidbody2D hook;
     public float releaseTime = .15f;
     public float maxDragDistance = 2f;
     public GameObject nextBall;
     public GameObject deathEffect;
+    public GameObject canvas;
     bool isPressed = false;
-    public static int numberOfTries = 3;
 
     void Start() {
-        rigidbody = GetComponent<Rigidbody2D>();
+        hook = GameObject.Find("hook").GetComponent<Rigidbody2D>();
+        GetComponent<SpringJoint2D>().connectedBody = hook;
     }
 
     void Update () {
@@ -22,40 +22,41 @@ public class PlayerController : MonoBehaviour{
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if (Vector3.Distance(mousePosition, hook.position) > maxDragDistance) {
-                rigidbody.position = hook.position+(mousePosition-hook.position).normalized*maxDragDistance;
+                rigidBody2D.position = hook.position + (mousePosition - hook.position).normalized * maxDragDistance;
             } else {
-                rigidbody.position = mousePosition;
+                rigidBody2D.position = mousePosition;
             }
         }
     }
 
     void OnMouseDown () {
         isPressed = true;
-        rigidbody.isKinematic = true;
+        rigidBody2D.isKinematic = true;
     }
 
     void OnMouseUp () {
         isPressed = false;
-        rigidbody.isKinematic = false;
+        rigidBody2D.isKinematic = false;
 
         StartCoroutine(Release());
     }
 
     IEnumerator Release () {
-        numberOfTries--;
         yield return new WaitForSeconds(releaseTime);
-        GetComponent<SpringJoint2D>().enabled = false;
-        this.enabled = false;
-        yield return new WaitForSeconds(2f);
 
-        if (numberOfTries > 0) {
+        GetComponent<SpringJoint2D>().enabled = false;
+        enabled = false;
+
+        yield return new WaitForSeconds(4f);
+
+        if (nextBall != null) {
             nextBall.SetActive(true);
         } else {
-            Debug.Log("Try Again");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            canvas.SetActive(true);
         }
         
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
+        
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

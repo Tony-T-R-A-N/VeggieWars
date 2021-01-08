@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour {
     public GameObject deathEffect;
     public float health = 4f;
     public static int enemiesAlive = 0;
+    public GameObject canvas;
 
     void Start() {
         enemiesAlive++;
@@ -21,7 +22,7 @@ public class EnemyController : MonoBehaviour {
 
         enemiesAlive--;
         if (enemiesAlive <= 0) {
-            Debug.Log("Level Won");
+            canvas.SetActive(true);
         }
 
         Destroy(gameObject);
