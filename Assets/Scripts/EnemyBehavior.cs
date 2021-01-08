@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class enemy1 : MonoBehaviour {
+public class EnemyBehavior : MonoBehaviour {
 
     public GameObject deathEffect;
 
     public float health = 4f;
 
-    public static int EnemiesAlive = 0;
+    public static int enemiesAlive = 0;
 
     void Start() {
-        EnemiesAlive++;
+        enemiesAlive++;
     }
 
     void OnCollisionEnter2D (Collision2D colInfo) {
@@ -25,8 +25,8 @@ public class enemy1 : MonoBehaviour {
     void Die() {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
 
-        EnemiesAlive--;
-        if (EnemiesAlive <= 0)
+        enemiesAlive--;
+        if (enemiesAlive <= 0)
             Debug.Log("Level Won");
 
         Destroy(gameObject);
