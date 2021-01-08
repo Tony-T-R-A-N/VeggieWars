@@ -18,8 +18,8 @@ public class EnemyController : MonoBehaviour {
     }
 
     void Die() {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
         gameHUDController.DecrementEnemiesAlive();
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

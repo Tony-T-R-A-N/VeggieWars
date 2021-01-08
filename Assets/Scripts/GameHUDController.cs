@@ -29,6 +29,7 @@ public class GameHUDController : MonoBehaviour {
         optionRetryButton.SetActive(false);
         optionLevelSelectButton.SetActive(false);
         optionsButton.SetActive(false);
+        enemiesAlive = 0;
     }
 
     public void ShowOptions() {
