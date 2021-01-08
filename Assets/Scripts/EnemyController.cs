@@ -1,14 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-public class EnemyBehavior : MonoBehaviour {
+public class EnemyController : MonoBehaviour {
 
     public GameObject deathEffect;
-
     public float health = 4f;
-
     public static int enemiesAlive = 0;
 
     void Start() {
@@ -19,17 +14,16 @@ public class EnemyBehavior : MonoBehaviour {
         if (colInfo.relativeVelocity.magnitude > health) {
             Die();
         }
-        
     }
 
     void Die() {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
 
         enemiesAlive--;
-        if (enemiesAlive <= 0)
+        if (enemiesAlive <= 0) {
             Debug.Log("Level Won");
+        }
 
         Destroy(gameObject);
     }
-
 }
