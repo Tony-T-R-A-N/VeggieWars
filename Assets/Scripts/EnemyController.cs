@@ -3,12 +3,12 @@
 public class EnemyController : MonoBehaviour {
 
     public GameObject deathEffect;
-    public float health = 4f;
-    public static int enemiesAlive = 0;
-    public GameObject canvas;
+    public float health = 2.5f;
+    GameHUDController gameHUDController;
 
     void Start() {
-        enemiesAlive++;
+        gameHUDController = GameObject.Find("Canvas").GetComponent<GameHUDController>();
+        gameHUDController.IncrementEnemiesAlive();
     }
 
     void OnCollisionEnter2D (Collision2D colInfo) {
@@ -19,12 +19,7 @@ public class EnemyController : MonoBehaviour {
 
     void Die() {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
-
-        enemiesAlive--;
-        if (enemiesAlive <= 0) {
-            canvas.SetActive(true);
-        }
-
+        gameHUDController.DecrementEnemiesAlive();
         Destroy(gameObject);
     }
 }

@@ -9,12 +9,13 @@ public class PlayerController : MonoBehaviour{
     public float maxDragDistance = 2f;
     public GameObject nextBall;
     public GameObject deathEffect;
-    public GameObject canvas;
     bool isPressed = false;
+    GameHUDController gameHUDController;
 
     void Start() {
         hook = GameObject.Find("hook").GetComponent<Rigidbody2D>();
         GetComponent<SpringJoint2D>().connectedBody = hook;
+        gameHUDController = GameObject.Find("Canvas").GetComponent<GameHUDController>();
     }
 
     void Update () {
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour{
         if (nextBall != null) {
             nextBall.SetActive(true);
         } else {
-            canvas.SetActive(true);
+            gameHUDController.ShowGameOverButtons();
         }
         
         yield return new WaitForSeconds(4f);
