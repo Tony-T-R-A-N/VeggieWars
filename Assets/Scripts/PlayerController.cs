@@ -55,9 +55,7 @@ public class PlayerController : MonoBehaviour{
         } else {
             gameHUDController.ShowGameOverButtons();
         }
-        
-        yield return new WaitForSeconds(4f);
-        
+
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

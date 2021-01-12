@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameHUDController : MonoBehaviour {
@@ -9,6 +8,7 @@ public class GameHUDController : MonoBehaviour {
     public GameObject optionRetryButton;
     public GameObject optionLevelSelectButton;
     public GameObject optionsButton;
+    public MainMenuController mainMenuController;
     static int enemiesAlive = 0;
 
     public void IncrementEnemiesAlive() {
@@ -46,5 +46,23 @@ public class GameHUDController : MonoBehaviour {
         optionRetryButton.SetActive(false);
         optionLevelSelectButton.SetActive(false);
         optionsButton.SetActive(true);
+    }
+
+    public void GoToMainMenuWhileInGame() {
+        enemiesAlive = 0;
+        
+        mainMenuController.MainMenu();
+    }
+
+    public void RetryWhileInGame() {
+        enemiesAlive = 0;
+        
+        mainMenuController.TryAgain();
+    }
+
+    public void GoToLevelSelectWhileInGame() {
+        enemiesAlive = 0;
+
+        mainMenuController.LevelSelect();
     }
 }

@@ -247,8 +247,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 148351376505354616}
-        m_MethodName: TryAgain
+      - m_Target: {fileID: 148351376505354619}
+        m_MethodName: RetryWhileInGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -376,8 +376,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 148351376505354616}
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 148351376505354619}
+        m_MethodName: GoToMainMenuWhileInGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -505,8 +505,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 148351376505354616}
-        m_MethodName: TryAgain
+      - m_Target: {fileID: 148351376505354619}
+        m_MethodName: RetryWhileInGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -650,6 +650,7 @@ MonoBehaviour:
   optionRetryButton: {fileID: 148351376120818004}
   optionLevelSelectButton: {fileID: 148351374765122888}
   optionsButton: {fileID: 148351376525895883}
+  mainMenuController: {fileID: 148351376505354616}
 --- !u!1 &148351376525895883
 GameObject:
   m_ObjectHideFlags: 0

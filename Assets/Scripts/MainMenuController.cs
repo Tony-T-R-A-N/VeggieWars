@@ -18,6 +18,10 @@ public class MainMenuController : MonoBehaviour {
         SceneManager.LoadScene(level + levelOffset);
     }
 
+    public void NextLevel() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void TryAgain() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
