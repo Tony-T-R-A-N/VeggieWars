@@ -9,19 +9,6 @@ public class GameHUDController : MonoBehaviour {
     public GameObject optionLevelSelectButton;
     public GameObject optionsButton;
     public MainMenuController mainMenuController;
-    static int enemiesAlive = 0;
-
-    public void IncrementEnemiesAlive() {
-        enemiesAlive++;
-    }
-
-    public void DecrementEnemiesAlive() {
-        enemiesAlive--;
-
-        if (enemiesAlive <= 0) {
-            ShowGameOverButtons();
-        }
-    }
 
     public void ShowGameOverButtons() {
         tryAgainButton.SetActive(true);
@@ -29,7 +16,6 @@ public class GameHUDController : MonoBehaviour {
         optionRetryButton.SetActive(false);
         optionLevelSelectButton.SetActive(false);
         optionsButton.SetActive(false);
-        enemiesAlive = 0;
     }
 
     public void ShowOptions() {
@@ -49,20 +35,14 @@ public class GameHUDController : MonoBehaviour {
     }
 
     public void GoToMainMenuWhileInGame() {
-        enemiesAlive = 0;
-        
         mainMenuController.MainMenu();
     }
 
     public void RetryWhileInGame() {
-        enemiesAlive = 0;
-        
         mainMenuController.TryAgain();
     }
 
     public void GoToLevelSelectWhileInGame() {
-        enemiesAlive = 0;
-
         mainMenuController.LevelSelect();
     }
 }

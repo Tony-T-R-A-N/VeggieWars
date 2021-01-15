@@ -5,8 +5,8 @@ public class PlayerController : MonoBehaviour{
 
     Rigidbody2D rigidBody2D;
     Rigidbody2D hook;
-    public float releaseTime = .15f;
-    public float maxDragDistance = 2f;
+    float releaseTime = .15f;
+    float maxDragDistance = 2f;
     public GameObject deathEffect;
     bool isPressed = false;
     GameHUDController gameHUDController;
@@ -33,8 +33,7 @@ public class PlayerController : MonoBehaviour{
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.CompareTag("Enemy")) {
             StopCoroutine(Release());
-            StartCoroutine(ResetPlayer());
-            StopCoroutine(ResetPlayer());
+            ResetPlayer();
         }
     }
 
@@ -48,8 +47,8 @@ public class PlayerController : MonoBehaviour{
         rigidBody2D.isKinematic = false;
         StartCoroutine(Release());
         StopCoroutine(Release());
-        StartCoroutine(ResetPlayer());
-        StopCoroutine(ResetPlayer());
+        StartCoroutine(StartResetPlayer());
+        StopCoroutine(StartResetPlayer());
     }
 
     IEnumerator Release() {
@@ -58,9 +57,13 @@ public class PlayerController : MonoBehaviour{
         GetComponent<SpringJoint2D>().enabled = false;
     }
 
-    IEnumerator ResetPlayer() {
+    IEnumerator StartResetPlayer() {
         yield return new WaitForSeconds(8f);
 
+        ResetPlayer();
+    }
+
+    void ResetPlayer() {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         transform.position = hook.position;
         isPressed = false;

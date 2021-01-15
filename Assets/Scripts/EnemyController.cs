@@ -3,19 +3,18 @@
 public class EnemyController : MonoBehaviour {
 
     public GameObject deathEffect;
-    public float health = 2.5f;
-    public float speed = 10f;
+    float health = 2.5f;
+    float speed = 2.5f;
     GameHUDController gameHUDController;
     ScoreScript scoreScript;
 
     void Start() {
         gameHUDController = GameObject.Find("Canvas").GetComponent<GameHUDController>();
-        gameHUDController.IncrementEnemiesAlive();
         scoreScript = GameObject.Find("ScoreText").GetComponent<ScoreScript>();
     }
 
     private void FixedUpdate() {
-        //gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2( -speed, 0f));
+        transform.Translate(new Vector3(-speed * Time.deltaTime, 0f, 0f));
     }
 
     void OnCollisionEnter2D (Collision2D colInfo) {
@@ -26,7 +25,6 @@ public class EnemyController : MonoBehaviour {
 
     void Die() {
         ScoreScript.scoreValue += 50;
-        gameHUDController.DecrementEnemiesAlive();
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
