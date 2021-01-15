@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6305638944944174318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,8 +99,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03877735, y: -0.96354306}
-  m_Size: {x: 1.4713116, y: 3.0095255}
+  m_Offset: {x: -0.009331524, y: -0.17212343}
+  m_Size: {x: 0.29628575, y: 0.6370404}
   m_Direction: 0
 --- !u!50 &166918612384529807
 Rigidbody2D:
@@ -140,7 +140,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 5
+  m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 1.5
 --- !u!114 &874296341173023533
