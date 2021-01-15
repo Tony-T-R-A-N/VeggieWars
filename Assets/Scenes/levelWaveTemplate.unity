@@ -199,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5028128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.75, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad54ead946215c49acfcef021c9dd38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragSpeed: 2
 --- !u!4 &36879684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 838967656240848502, guid: a2f9d8a9b86ee63408dcd05242cc1131,
@@ -970,7 +969,7 @@ PrefabInstance:
     - target: {fileID: 2791249056946298580, guid: bac8d0aebed24e14685ea35d9a4e4634,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27
+      value: 25.5
       objectReference: {fileID: 0}
     - target: {fileID: 2791249056946298580, guid: bac8d0aebed24e14685ea35d9a4e4634,
         type: 3}

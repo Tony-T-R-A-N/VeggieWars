@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.otherCollider.CompareTag("Enemy")) {
+        if (collision.collider.CompareTag("Enemy")) {
             StopCoroutine(Release());
             StartCoroutine(ResetPlayer());
             StopCoroutine(ResetPlayer());

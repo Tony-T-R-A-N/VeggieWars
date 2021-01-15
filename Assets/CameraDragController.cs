@@ -2,27 +2,30 @@
 
 public class CameraDragController : MonoBehaviour {
 
-    public float dragSpeed = .5f;
-    static int scrollThresholdMin = Screen.width / 4;
-    static int scrollThresholdMax = scrollThresholdMin * 3;
+    float dragSpeed = 10f;
+    static float scrollThresholdMin = .05f;
+    static float scrollThresholdMax = .95f;
 
     void Update() {
+        float cameraPosition = Camera.main.transform.position.x;
         float mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition).x;
-        float positionX = mousePosition * dragSpeed;
-        Vector2 move = new Vector2(-positionX, 0f);
+        float movementSpeed = dragSpeed * Time.deltaTime;
+        Vector2 move = new Vector2(movementSpeed, 0f);
 
         if (mousePosition <= scrollThresholdMin) {
-            if (mousePosition < 0f) {
-
+            Debug.Log(mousePosition);
+            if (cameraPosition - movementSpeed <= scrollThresholdMin) {
+                transform.position = new Vector3(-.75f, 0f, -10f);
+            } else {
+                transform.Translate(-move, Space.World);
             }
-
-            transform.Translate(move, Space.World);
-        } else if (mousePosition >= scrollThresholdMax) {
-            if (mousePosition < Screen.width) {
-
+        } else if (mousePosition + movementSpeed >= scrollThresholdMax) {
+            Debug.Log(mousePosition);
+            if (cameraPosition >= 18f) {
+                transform.position = new Vector3(18.25f, 0f, -10f);
+            } else {
+                transform.Translate(move, Space.World);
             }
-
-            transform.Translate(move, Space.World);
         }
     }
 }
