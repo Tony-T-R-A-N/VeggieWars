@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4536259648810702426}
   - component: {fileID: 6771838952450061214}
-  - component: {fileID: -5698832263966908191}
+  - component: {fileID: 7539804289212843144}
   - component: {fileID: 1841611065099596495}
   - component: {fileID: 8716502130002880083}
   - component: {fileID: 1728726903087348845}
   - component: {fileID: 6962072569455392833}
   m_Layer: 0
   m_Name: brocolli
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5502718286055357358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &-5698832263966908191
-EdgeCollider2D:
+--- !u!70 &7539804289212843144
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,40 +99,9 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -2.3676834, y: 0.55588347}
-  - {x: -2.046898, y: -0.35910437}
-  - {x: -1.3892899, y: -0.6449407}
-  - {x: -1.2821331, y: -1.0062305}
-  - {x: -1.0325031, y: -1.3012737}
-  - {x: -0.740736, y: -1.4725587}
-  - {x: -0.6284199, y: -1.6536306}
-  - {x: -0.5131836, y: -2.1913776}
-  - {x: -0.28621674, y: -2.4682958}
-  - {x: 0.057632446, y: -2.5307302}
-  - {x: 0.46614075, y: -2.4865813}
-  - {x: 0.9409275, y: -1.726702}
-  - {x: 0.96201706, y: -1.0756097}
-  - {x: 1.5009117, y: -0.5373196}
-  - {x: 1.6375732, y: -0.1238285}
-  - {x: 2.2338676, y: 0.039173543}
-  - {x: 2.3675804, y: 0.9294255}
-  - {x: 2.0282955, y: 1.208819}
-  - {x: 1.7988873, y: 1.5617231}
-  - {x: 1.3608303, y: 1.7308398}
-  - {x: 1.0227089, y: 1.5827408}
-  - {x: 0.64759827, y: 1.7604151}
-  - {x: 0.34522247, y: 1.7548553}
-  - {x: 0.15888596, y: 2.2889743}
-  - {x: -0.31969833, y: 2.5443497}
-  - {x: -0.99393845, y: 2.3149889}
-  - {x: -1.2199936, y: 1.903281}
-  - {x: -1.252718, y: 1.7229668}
-  - {x: -1.616087, y: 1.6649598}
-  - {x: -2.0336437, y: 1.2302976}
-  - {x: -2.3824787, y: 0.555884}
+  m_Offset: {x: 0.13755822, y: -0.3074832}
+  m_Size: {x: 1.423481, y: 4.3850336}
+  m_Direction: 0
 --- !u!50 &1841611065099596495
 Rigidbody2D:
   serializedVersion: 4
@@ -171,7 +140,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 5
+  m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 1.5
 --- !u!114 &1728726903087348845
@@ -186,10 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7340900ec3b881b449b5f2d30fed648a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody2D: {fileID: 1841611065099596495}
   releaseTime: 0.15
   maxDragDistance: 2
-  nextBall: {fileID: 0}
   deathEffect: {fileID: 2816117964224197072, guid: 400e8c0fbb1f77e48a659e62ee0bbd8f,
     type: 3}
 --- !u!96 &6962072569455392833

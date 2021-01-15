@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8881648271769286401}
   m_Layer: 0
   m_Name: carrot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6305638944944174318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -155,10 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7340900ec3b881b449b5f2d30fed648a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody2D: {fileID: 166918612384529807}
   releaseTime: 0.15
   maxDragDistance: 2
-  nextBall: {fileID: 0}
   deathEffect: {fileID: 2816117964224197072, guid: 400e8c0fbb1f77e48a659e62ee0bbd8f,
     type: 3}
 --- !u!96 &8881648271769286401

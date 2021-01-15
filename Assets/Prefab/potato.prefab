@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3839484642277283421}
   - component: {fileID: 6216930437680198553}
-  - component: {fileID: 1527692121197953951}
+  - component: {fileID: 1691987154798313025}
   - component: {fileID: 1311155989553951432}
   - component: {fileID: 8307912522506987092}
   - component: {fileID: 2035966887298546794}
   - component: {fileID: 7719977837350664262}
   m_Layer: 0
   m_Name: potato
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5179434022567001001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &1527692121197953951
-EdgeCollider2D:
+--- !u!70 &1691987154798313025
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,22 +99,9 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -1.0808989, y: 1.1083727}
-  - {x: -1.581608, y: -1.2366037}
-  - {x: -1.2828282, y: -2.0252247}
-  - {x: -0.15144935, y: -2.5234802}
-  - {x: 0.6888998, y: -2.4666576}
-  - {x: 1.3919581, y: -1.8849422}
-  - {x: 1.6697476, y: -1.0832188}
-  - {x: 1.5162903, y: -0.06366121}
-  - {x: 1.1313363, y: 1.5039185}
-  - {x: 0.8523072, y: 1.8270301}
-  - {x: 0.05533263, y: 1.9654505}
-  - {x: -0.5652248, y: 1.752406}
-  - {x: -1.0710611, y: 1.1145196}
+  m_Offset: {x: 0.031145215, y: -0.29198328}
+  m_Size: {x: 2.6485658, y: 4.4160333}
+  m_Direction: 0
 --- !u!50 &1311155989553951432
 Rigidbody2D:
   serializedVersion: 4
@@ -153,7 +140,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 5
+  m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 1.5
 --- !u!114 &2035966887298546794
@@ -168,10 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7340900ec3b881b449b5f2d30fed648a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody2D: {fileID: 1311155989553951432}
   releaseTime: 0.15
   maxDragDistance: 2
-  nextBall: {fileID: 0}
   deathEffect: {fileID: 2816117964224197072, guid: 400e8c0fbb1f77e48a659e62ee0bbd8f,
     type: 3}
 --- !u!96 &7719977837350664262

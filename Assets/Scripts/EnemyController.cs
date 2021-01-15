@@ -4,6 +4,7 @@ public class EnemyController : MonoBehaviour {
 
     public GameObject deathEffect;
     public float health = 2.5f;
+    public float speed = 10f;
     GameHUDController gameHUDController;
 
     void Start() {
@@ -11,8 +12,12 @@ public class EnemyController : MonoBehaviour {
         gameHUDController.IncrementEnemiesAlive();
     }
 
+    private void FixedUpdate() {
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2( -speed, 0f));
+    }
+
     void OnCollisionEnter2D (Collision2D colInfo) {
-        if (colInfo.relativeVelocity.magnitude > health) {
+        if (colInfo.otherCollider.CompareTag("Player") && colInfo.relativeVelocity.magnitude > health) {
             Die();
         }
     }
