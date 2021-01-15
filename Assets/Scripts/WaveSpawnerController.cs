@@ -7,30 +7,27 @@ public class WaveSpawnerController : MonoBehaviour {
     [System.Serializable]
     public class Wave {
         public string name;
-        public Transform enemy;
+        public Transform enemyObject;
         public int count;
-        public float rate;
     }
     public Wave[] waves;
+    public Transform[] spawnPointsObject;
     int nextWave = 0;
-    public Transform[] spawnPoints;
     float waveCountdown;
     float searchCountdown = 1f;
-    public float timeBetweenWaves = 5f;
+    float timeBetweenWaves = 3f;
+    float rate;
     SpawnState state = SpawnState.COUNTING;
     GameHUDController gameHUDController;
 
     void Start() {
         gameHUDController = GameObject.Find("Canvas").GetComponent<GameHUDController>();
-
-        if (spawnPoints.Length == 0) {
-            Debug.LogError("No spawn points referenced.");
-        }
-
         waveCountdown = timeBetweenWaves;
     }
 
     void Update() {
+        rate = Random.Range(1f, 3f);
+
         if (state == SpawnState.WAITING) {
             if (!EnemyIsAlive()) {
                 WaveCompleted();
@@ -42,6 +39,7 @@ public class WaveSpawnerController : MonoBehaviour {
         if (waveCountdown <= 0) {
             if (state != SpawnState.SPAWNING) {
                 StartCoroutine(SpawnWave(waves[nextWave]));
+                StopCoroutine("SpawnWave");
             }
         } else {
             waveCountdown -= Time.deltaTime;
@@ -50,7 +48,6 @@ public class WaveSpawnerController : MonoBehaviour {
 
     void WaveCompleted() {
         gameHUDController.WaveCompleteText();
-
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
@@ -76,24 +73,23 @@ public class WaveSpawnerController : MonoBehaviour {
         return true;
     }
 
-    IEnumerator SpawnWave(Wave _wave) {
-        gameHUDController.WaveNumberText(_wave.name);
+    IEnumerator SpawnWave(Wave wave) {
+        gameHUDController.WaveNumberText(wave.name);
         state = SpawnState.SPAWNING;
 
-        for (int i = 0; i < _wave.count; i++) {
-            SpawnEnemy(_wave.enemy);
-            yield return new WaitForSeconds(1f / _wave.rate);
+        for (int i = 0; i < wave.count; i++) {
+            SpawnEnemy(wave.enemyObject);
+
+            yield return new WaitForSeconds(rate);
         }
 
         state = SpawnState.WAITING;
-
-        yield break;
     }
 
-    void SpawnEnemy(Transform _enemy) {
-        Debug.Log("Spawning Enemy; " + _enemy.name);
+    void SpawnEnemy(Transform enemy) {
+        Debug.Log("Spawning Enemy; " + enemy.name);
 
-        Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+        Transform spawnPoint = spawnPointsObject[Random.Range(0, spawnPointsObject.Length)];
+        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
 }

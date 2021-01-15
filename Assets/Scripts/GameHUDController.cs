@@ -30,6 +30,7 @@ public class GameHUDController : MonoBehaviour {
         optionsButton.SetActive(false);
 
         StartCoroutine(MinimizeOptions());
+        StopCoroutine(MinimizeOptions());
     }
 
     IEnumerator MinimizeOptions() {
@@ -50,6 +51,11 @@ public class GameHUDController : MonoBehaviour {
 
     public void GoToLevelSelectWhileInGame() {
         mainMenuController.LevelSelect();
+    }
+
+    void ResetHUD() {
+        healthValue = 100;
+        moneyValue = 0;
     }
 
     public void IncrementHealth(int health) {

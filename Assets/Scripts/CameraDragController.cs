@@ -11,16 +11,16 @@ public class CameraDragController : MonoBehaviour {
         float mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition).x;
         float movementSpeed = dragSpeed * Time.deltaTime;
         Vector2 move = new Vector2(movementSpeed, 0f);
-
+        
         if (mousePosition <= scrollThresholdMin) {
-            if (cameraPosition - movementSpeed <= scrollThresholdMin) {
-                transform.position = new Vector3(-.75f, 0f, -10f);
+            if (cameraPosition - movementSpeed <= -5f) {
+                transform.position = new Vector3(-5f, 0f, -10f);
             } else {
                 transform.Translate(-move, Space.World);
             }
         } else if (mousePosition + movementSpeed >= scrollThresholdMax) {
-            if (cameraPosition >= 18f) {
-                transform.position = new Vector3(18.25f, 0f, -10f);
+            if (cameraPosition >= 5f) {
+                transform.position = new Vector3(5f, 0f, -10f);
             } else {
                 transform.Translate(move, Space.World);
             }

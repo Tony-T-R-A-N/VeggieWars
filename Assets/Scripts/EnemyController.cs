@@ -3,10 +3,10 @@
 public class EnemyController : MonoBehaviour {
 
     public GameObject deathEffect;
-    public float health;
-    public float speed;
     GameHUDController gameHUDController;
     PlayerController playerController;
+    public float health;
+    public float speed;
 
     void Start() {
         gameHUDController = GameObject.Find("Canvas").GetComponent<GameHUDController>();
@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour {
          if (colInfo.collider.CompareTag("Player")) {
             health -= playerController.damage;
 
-            if (health == 0f) {
+            if (health <= 0f) {
                 gameHUDController.IncrementMoney(50);
                 Die();
             }
