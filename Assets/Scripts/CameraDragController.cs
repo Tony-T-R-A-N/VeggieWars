@@ -13,14 +13,12 @@ public class CameraDragController : MonoBehaviour {
         Vector2 move = new Vector2(movementSpeed, 0f);
 
         if (mousePosition <= scrollThresholdMin) {
-            Debug.Log(mousePosition);
             if (cameraPosition - movementSpeed <= scrollThresholdMin) {
                 transform.position = new Vector3(-.75f, 0f, -10f);
             } else {
                 transform.Translate(-move, Space.World);
             }
         } else if (mousePosition + movementSpeed >= scrollThresholdMax) {
-            Debug.Log(mousePosition);
             if (cameraPosition >= 18f) {
                 transform.position = new Vector3(18.25f, 0f, -10f);
             } else {

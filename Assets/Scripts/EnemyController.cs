@@ -3,14 +3,14 @@
 public class EnemyController : MonoBehaviour {
 
     public GameObject deathEffect;
-    float health = 2.5f;
-    float speed = 2.5f;
+    public float health;
+    public float speed;
     GameHUDController gameHUDController;
-    ScoreScript scoreScript;
+    PlayerController playerController;
 
     void Start() {
         gameHUDController = GameObject.Find("Canvas").GetComponent<GameHUDController>();
-        scoreScript = GameObject.Find("ScoreText").GetComponent<ScoreScript>();
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void FixedUpdate() {
@@ -18,13 +18,24 @@ public class EnemyController : MonoBehaviour {
     }
 
     void OnCollisionEnter2D (Collision2D colInfo) {
-        if (colInfo.collider.CompareTag("Player") && colInfo.relativeVelocity.magnitude > health) {
+         if (colInfo.collider.CompareTag("Player")) {
+            health -= playerController.damage;
+
+            if (health == 0f) {
+                gameHUDController.IncrementMoney(50);
+                Die();
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Core")) {
+            gameHUDController.DecrementHealth(10);
             Die();
         }
     }
 
     void Die() {
-        ScoreScript.scoreValue += 50;
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

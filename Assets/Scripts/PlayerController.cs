@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour{
+public class PlayerController : MonoBehaviour {
 
+    public GameObject deathEffect;
     Rigidbody2D rigidBody2D;
     Rigidbody2D hook;
+    GameHUDController gameHUDController;
+    public int damage;
     float releaseTime = .15f;
     float maxDragDistance = 2f;
-    public GameObject deathEffect;
     bool isPressed = false;
-    GameHUDController gameHUDController;
 
     void Start() {
         rigidBody2D = GetComponent<Rigidbody2D>();

@@ -12,14 +12,17 @@ public class WaveSpawnerController : MonoBehaviour {
         public float rate;
     }
     public Wave[] waves;
-    private int nextWave = 0;
+    int nextWave = 0;
     public Transform[] spawnPoints;
-    private float waveCountdown;
-    private float searchCountdown = 1f;
+    float waveCountdown;
+    float searchCountdown = 1f;
     public float timeBetweenWaves = 5f;
-    private SpawnState state = SpawnState.COUNTING;
+    SpawnState state = SpawnState.COUNTING;
+    GameHUDController gameHUDController;
 
     void Start() {
+        gameHUDController = GameObject.Find("Canvas").GetComponent<GameHUDController>();
+
         if (spawnPoints.Length == 0) {
             Debug.LogError("No spawn points referenced.");
         }
@@ -37,7 +40,7 @@ public class WaveSpawnerController : MonoBehaviour {
         }
 
         if (waveCountdown <= 0) {
-            if (state != SpawnState.SPAWNING){
+            if (state != SpawnState.SPAWNING) {
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
         } else {
@@ -46,14 +49,14 @@ public class WaveSpawnerController : MonoBehaviour {
     }
 
     void WaveCompleted() {
-        Debug.Log("Wave Completed!");
+        gameHUDController.WaveCompleteText();
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
         if (nextWave + 1 > waves.Length - 1) {
             nextWave = 0;
-            Debug.Log("All WAVES COMPLETE! LOOPING...");
+            gameHUDController.GameOverText();
         } else {
             nextWave++;
         }   
@@ -74,7 +77,7 @@ public class WaveSpawnerController : MonoBehaviour {
     }
 
     IEnumerator SpawnWave(Wave _wave) {
-        Debug.Log("Spawning Wave:" + _wave.name);
+        gameHUDController.WaveNumberText(_wave.name);
         state = SpawnState.SPAWNING;
 
         for (int i = 0; i < _wave.count; i++) {

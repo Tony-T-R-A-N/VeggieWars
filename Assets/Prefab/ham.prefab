@@ -135,5 +135,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 2816117964224197072, guid: 400e8c0fbb1f77e48a659e62ee0bbd8f,
     type: 3}
-  health: 2.5
+  health: 5
   speed: 10

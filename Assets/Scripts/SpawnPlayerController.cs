@@ -3,8 +3,8 @@
 public class SpawnPlayerController : MonoBehaviour {
 
     public GameObject[] vegetables;
-    private GameObject currentVegetable;
-    private int currentVegetableIndex = 0;
+    GameObject currentVegetable;
+    int currentVegetableIndex = 0;
 
     void Start() {
         currentVegetable = Instantiate(vegetables[currentVegetableIndex], gameObject.transform.position, Quaternion.identity);

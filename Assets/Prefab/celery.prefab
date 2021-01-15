@@ -155,10 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7340900ec3b881b449b5f2d30fed648a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseTime: 0.15
-  maxDragDistance: 2
   deathEffect: {fileID: 2816117964224197072, guid: 400e8c0fbb1f77e48a659e62ee0bbd8f,
     type: 3}
+  damage: 1
 --- !u!96 &2196817782951954189
 TrailRenderer:
   serializedVersion: 2
