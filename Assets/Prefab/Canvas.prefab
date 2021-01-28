@@ -118,7 +118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1020695001, guid: a2f9d8a9b86ee63408dcd05242cc1131, type: 3}
         m_MethodName: SwitchVegetable
         m_Mode: 3
         m_Arguments:
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1020695001, guid: a2f9d8a9b86ee63408dcd05242cc1131, type: 3}
         m_MethodName: SwitchVegetable
         m_Mode: 3
         m_Arguments:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1020695001, guid: a2f9d8a9b86ee63408dcd05242cc1131, type: 3}
         m_MethodName: SwitchVegetable
         m_Mode: 3
         m_Arguments:
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1020695001, guid: a2f9d8a9b86ee63408dcd05242cc1131, type: 3}
         m_MethodName: SwitchVegetable
         m_Mode: 3
         m_Arguments:
@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1020695001, guid: a2f9d8a9b86ee63408dcd05242cc1131, type: 3}
         m_MethodName: SwitchVegetable
         m_Mode: 3
         m_Arguments:
@@ -2123,7 +2123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1020695001, guid: a2f9d8a9b86ee63408dcd05242cc1131, type: 3}
         m_MethodName: SwitchVegetable
         m_Mode: 3
         m_Arguments:
