@@ -954,34 +954,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1689477933}
-    - target: {fileID: 211706142, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchVegetable
-      objectReference: {fileID: 0}
     - target: {fileID: 483980578, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1689477933}
-    - target: {fileID: 483980578, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchVegetable
-      objectReference: {fileID: 0}
     - target: {fileID: 1413599266, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1689477933}
-    - target: {fileID: 1413599266, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchVegetable
-      objectReference: {fileID: 0}
     - target: {fileID: 1785458415, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1689477933}
-    - target: {fileID: 1785458415, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchVegetable
-      objectReference: {fileID: 0}
     - target: {fileID: 148351376505354612, guid: f01eaffac97d92b4ebf3e55a1fbb662e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1097,21 +1081,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1689477933}
-    - target: {fileID: 5403185089200456237, guid: f01eaffac97d92b4ebf3e55a1fbb662e,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchVegetable
-      objectReference: {fileID: 0}
     - target: {fileID: 5536862181706193631, guid: f01eaffac97d92b4ebf3e55a1fbb662e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1689477933}
-    - target: {fileID: 5536862181706193631, guid: f01eaffac97d92b4ebf3e55a1fbb662e,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchVegetable
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
 --- !u!1001 &633936842596599209
