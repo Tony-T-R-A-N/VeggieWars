@@ -763,6 +763,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1568372062}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1689477933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1020695001, guid: a2f9d8a9b86ee63408dcd05242cc1131,
+    type: 3}
+  m_PrefabInstance: {fileID: 130322276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de37153a8b5795439198e9eb8d6f652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2020994153
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,16 +821,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: Wave 1
-    enemyObject: {fileID: 7072543116120468196, guid: 13b876723f2773b4991d5add43b5fb03,
-      type: 3}
-    count: 10
+    enemyObjects:
+    - {fileID: 7072543116120468196, guid: 13b876723f2773b4991d5add43b5fb03, type: 3}
+    count: 5
   - name: Wave 2
-    enemyObject: {fileID: 4542327970195175660, guid: 856b4c873d1efb746b502c8f9915e296,
-      type: 3}
-    count: 15
+    enemyObjects:
+    - {fileID: 7072543116120468196, guid: 13b876723f2773b4991d5add43b5fb03, type: 3}
+    - {fileID: 4542327970195175660, guid: 856b4c873d1efb746b502c8f9915e296, type: 3}
+    count: 10
   - name: Wave 3
-    enemyObject: {fileID: 2495030756537974567, guid: 30207bece3eae1d45bae2d44cfa816db,
-      type: 3}
+    enemyObjects:
+    - {fileID: 9034651825503823405, guid: 23cce901c2f15f348897006fc44d382f, type: 3}
+    - {fileID: 4542327970195175660, guid: 856b4c873d1efb746b502c8f9915e296, type: 3}
+    - {fileID: 2495030756537974567, guid: 30207bece3eae1d45bae2d44cfa816db, type: 3}
     count: 20
   spawnPointsObject:
   - {fileID: 5528114624019612138}
@@ -938,18 +953,34 @@ PrefabInstance:
     - target: {fileID: 211706142, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1689477933}
+    - target: {fileID: 211706142, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchVegetable
       objectReference: {fileID: 0}
     - target: {fileID: 483980578, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1689477933}
+    - target: {fileID: 483980578, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchVegetable
       objectReference: {fileID: 0}
     - target: {fileID: 1413599266, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1689477933}
+    - target: {fileID: 1413599266, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchVegetable
       objectReference: {fileID: 0}
     - target: {fileID: 1785458415, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1689477933}
+    - target: {fileID: 1785458415, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchVegetable
       objectReference: {fileID: 0}
     - target: {fileID: 148351376505354612, guid: f01eaffac97d92b4ebf3e55a1fbb662e,
         type: 3}
@@ -1065,11 +1096,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1689477933}
+    - target: {fileID: 5403185089200456237, guid: f01eaffac97d92b4ebf3e55a1fbb662e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchVegetable
       objectReference: {fileID: 0}
     - target: {fileID: 5536862181706193631, guid: f01eaffac97d92b4ebf3e55a1fbb662e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1689477933}
+    - target: {fileID: 5536862181706193631, guid: f01eaffac97d92b4ebf3e55a1fbb662e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchVegetable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01eaffac97d92b4ebf3e55a1fbb662e, type: 3}

@@ -7,7 +7,7 @@ public class WaveSpawnerController : MonoBehaviour {
     [System.Serializable]
     public class Wave {
         public string name;
-        public Transform enemyObject;
+        public Transform[] enemyObjects;
         public int count;
     }
     public Wave[] waves;
@@ -78,7 +78,8 @@ public class WaveSpawnerController : MonoBehaviour {
         state = SpawnState.SPAWNING;
 
         for (int i = 0; i < wave.count; i++) {
-            SpawnEnemy(wave.enemyObject);
+            int index = Random.Range(0, wave.enemyObjects.Length);
+            SpawnEnemy(wave.enemyObjects[index]);
 
             yield return new WaitForSeconds(rate);
         }
